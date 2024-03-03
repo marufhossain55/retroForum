@@ -6,6 +6,9 @@ const fatchAllPost = async () => {
   posts = data.posts;
   const allPostContainer = document.getElementById('allPost-container');
   posts.forEach((post) => {
+    const statusImage = post.isActive
+      ? 'images/Status_green.png'
+      : 'images/Status_red.png';
     // console.log(post);
     const allPostCard = document.createElement('div');
     // allPostCard.classList = `bg-[#F3F3F5] p-10 flex rounded-3xl gap-6`;
@@ -21,7 +24,7 @@ const fatchAllPost = async () => {
                   style="display: block"
                 />
                 <img
-                  src="images/Status_green.png"
+                  src="${statusImage}"
                   alt="Status_green"
                   style="position: absolute; top: -5px; right: -5px"
                 />
