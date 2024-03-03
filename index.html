@@ -10,14 +10,267 @@
       type="text/css"
     />
     <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css" />
     <title>Retro Forum</title>
   </head>
-  <body>
+  <body class="container mx-auto mt-14">
     <header>
-      <h3 class="text-">hi</h3>
+      <section>
+        <div class="navbar bg-base-100">
+          <div class="flex-1">
+            <a class="btn btn-ghost text-4xl font-extrabold">ReTro</a>
+          </div>
+          <div class="flex-none">
+            <div class="flex gap-2 mr-6">
+              <div class="tooltip" data-tip="Home">
+                <img src="/images/Frame 2.png" alt="home" />
+              </div>
+              <div class="tooltip" data-tip="Post">
+                <img src="/images/Frame 3.png" alt="" />
+              </div>
+              <div class="tooltip" data-tip="Add People">
+                <img src="/images/Frame 4.png" alt="" />
+              </div>
+              <div class="tooltip" data-tip="Pin Post">
+                <img src="/images/Frame 5.png" alt="" />
+              </div>
+            </div>
+            <button
+              class="btn bg-[#797DFC] rounded-3xl w-36 text-white text-lg"
+            >
+              Sign In
+            </button>
+          </div>
+        </div>
+      </section>
+      <!-- navbar ends -->
+      <!-- bg-[#12132D] -->
+      <!-- banner starts -->
+      <section
+        class="bg-[linear-gradient(50deg,rgba(18,19,45,1),rgba(18,19,45,.1)),url(images/bgbanner.png)] rounded-3xl h-[500px] bg-bottom bg-no-repeat flex justify-center items-center mt-14"
+      >
+        <div class="flex gap-20">
+          <div class="space-y-10">
+            <h1 class="text-6xl font-bold text-white">
+              Welcome to the <br />
+              <span
+                class="text-transparent bg-clip-text bg-gradient-to-r from-[#797DFC] to-[#797DFC]"
+                >ReTro</span
+              >
+              Forum
+            </h1>
+            <p class="text-xl font-medium text-[#FFFFFFCC]">
+              Share your favorite opinion and win and wp <br />forum coffee mug!
+            </p>
+            <input
+              type="text"
+              placeholder="Type here"
+              class="input input-bordered w-full max-w-xs"
+            />
+            <button class="btn bg-[#797DFC] border-none">Search</button>
+          </div>
+          <div class="bg-white space-y-4 font-medium p-6 m-auto rounded-xl">
+            <div class="flex justify-between w-48">
+              <p>Registered Users</p>
+              <p>01</p>
+            </div>
+            <div class="flex justify-between w-48">
+              <p>Forum</p>
+              <p>05</p>
+            </div>
+            <div class="flex justify-between w-48">
+              <p>Topics</p>
+              <p>01</p>
+            </div>
+            <div class="flex justify-between w-48">
+              <p>Replies</p>
+              <p>01</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- banner ends -->
     </header>
-    <main></main>
-    <footer></footer>
+    <main>
+      <section>
+        <div class="flex flex-col justify-center mt-28 items-center">
+          <h2 class="text-center font-black text-[#12132D] text-5xl">
+            Let’s Discuss
+          </h2>
+          <p class="font-normal text-lg mt-6">
+            Yes, you can run unit tests and view the results directly within the
+            <br />
+            app. The integrated testing features allow for a streamlined .
+          </p>
+        </div>
+
+        <!-- card section start -->
+        <div class="flex justify-around mt-12">
+          <div class="bg-[#F3F3F5] p-10 flex rounded-3xl gap-6">
+            <!-- <div>
+              <img
+                height="90px"
+                width="90px"
+                src="images/Rectangle 4.png"
+                alt="images"
+              />
+              <img src="images/Status_green.png" alt="Status_green" />
+            </div> -->
+            <div style="position: relative">
+              <img
+                height="90px"
+                width="90px"
+                src="images/Rectangle 4.png"
+                alt="images"
+                style="display: block"
+              />
+              <img
+                src="images/Status_green.png"
+                alt="Status_green"
+                style="position: absolute; top: -5px; right: -5px"
+              />
+            </div>
+            <div>
+              <div class="inline-flex gap-4 font-medium text-sm mb-3">
+                <p># Music</p>
+                <p>Author : Awlad Hossain</p>
+              </div>
+              <div class="border-b-4 border-dashed">
+                <h3 class="font-bold text-xl mb-4">
+                  10 Kids Unaware of Their Halloween Costume
+                </h3>
+                <p class="text-[#12132D99] mb-5">
+                  It’s one thing to subject yourself to ha Halloween costume
+                  mishap because, <br />
+                  hey that’s your prerogative
+                </p>
+              </div>
+              <div class="flex justify-between mt-6">
+                <div class="flex space-x-6">
+                  <div class="flex gap-2">
+                    <img src="images/tabler-icon-message-2.png" alt="message" />
+                    <p>560</p>
+                  </div>
+                  <div class="flex gap-2">
+                    <img src="images/seen.png" alt="total watch" />
+                    <p>1,568</p>
+                  </div>
+                  <div class="flex gap-2">
+                    <img
+                      src="images/tabler-icon-clock-hour-9.png"
+                      alt="posted time"
+                    />
+                    <p>5 min</p>
+                  </div>
+                </div>
+                <div><img src="images/email 1.png" alt="" /></div>
+              </div>
+            </div>
+          </div>
+          <div class="bg-[#F3F3F5] w-[25%] p-8 rounded-2xl">
+            <div class="flex justify-between">
+              <h3 class="font-bold text-xl">Title</h3>
+              <div class="flex gap-2 text-center">
+                <img src="images/tik.png" alt="tik" />
+                <p class="m-1 text-[#12132D99]">Mark as read (4)</p>
+              </div>
+            </div>
+            <div class="flex gap-1 bg-white p-4 rounded-2xl mt-4">
+              <p class="m-1 font-semibold">
+                10 Kids Unaware of Their Halloween Costume
+              </p>
+              <div class="flex gap-2 justify-center m-4">
+                <img src="images/seen.png" alt="watched" />
+                <p>1,568</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- card section ends -->
+
+      <!-- callout section starts -->
+      <section>
+        <div
+          class="flex justify-center items-center gap-40 bg-[#12132D] rounded-3xl mt-28 p-8"
+        >
+          <div>
+            <h2 class="font-black text-6xl text-white mb-4">Join Our Forum</h2>
+            <p class="text-lg text-[#FFFFFFCC] mb-8">
+              Share your favorite opinion and win and wp forum coffee mug! Yes,
+              you can <br />run unit tests and view the results directly within
+              the app.
+            </p>
+            <button
+              class="btn font-bold text-white text-xl bg-[#797DFC] h-14 w-60 border-none rounded-3xl"
+            >
+              Registered Now
+            </button>
+          </div>
+          <div><img src="images/joinforum.png" alt="" /></div>
+        </div>
+      </section>
+      <!-- callout section ends-->
+
+      <!-- letest post starts -->
+      <section>
+        <div class="flex flex-col justify-center mt-28 items-center">
+          <h2 class="text-center font-black text-[#12132D] text-5xl">
+            Latest Posts
+          </h2>
+          <p class="font-normal text-lg mt-6">
+            Yes, you can run unit tests and view the results directly within the
+            <br />
+            app. The integrated testing features allow for a streamlined .
+          </p>
+        </div>
+        <!-- post card starts -->
+        <div class="mt-12">
+          <div class="border w-96 flex flex-col p-6 space-y-3 rounded-3xl">
+            <img src="images/profile-4.png" alt="" />
+            <div class="flex gap-4">
+              <img src="images/calander.png" alt="calander" />
+              <p>29 January 2024</p>
+            </div>
+            <h4 class="font-extrabold text-lg">
+              What will a mars habitat force that impact in our daily life!!!
+            </h4>
+            <p>
+              Yes, you can run unit tests and view the results directly within
+              the app.
+            </p>
+            <div class="flex gap-2">
+              <div class="rounded-full">
+                <img src="images/author_pic.png" alt="author_pic" />
+              </div>
+              <div>
+                <h5 class="font-bold">Cameron Williamson</h5>
+                <p>ROR Developer</p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- post card ends -->
+      </section>
+      <!-- letest post section ends -->
+    </main>
+    <footer>
+      <section class="bg-[#12132D0D] h-[350px] mt-28">
+        <div
+          class="flex flex-col text-center justify-center items-center space-y-5 border-b-2 m-4 p-10"
+        >
+          <h2 class="font-black text-4xl">ReTro</h2>
+          <p>
+            Join our lively forum community where members discuss topics ranging
+            from technology and gaming to arts and literature. <br />
+            Engage in insightful conversations, share your expertise, and
+            connect with like-minded individuals today!
+          </p>
+          <img src="images/Social.png" alt="Social" />
+        </div>
+        <p class="text-center mt-12">2017, All Rights Reserved.</p>
+      </section>
+    </footer>
     <script src="script.js"></script>
   </body>
 </html>
