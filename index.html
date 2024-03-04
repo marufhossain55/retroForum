@@ -23,16 +23,16 @@
             </div>
             <div class="flex-none">
               <div class="flex gap-2 mr-6">
-                <div class="tooltip" data-tip="Home">
+                <div class="tooltip hidden lg:block" data-tip="Home">
                   <img src="/images/Frame 2.png" alt="home" />
                 </div>
-                <div class="tooltip" data-tip="Post">
+                <div class="tooltip hidden lg:block" data-tip="Post">
                   <img src="/images/Frame 3.png" alt="" />
                 </div>
-                <div class="tooltip" data-tip="Add People">
+                <div class="tooltip hidden lg:block" data-tip="Add People">
                   <img src="/images/Frame 4.png" alt="" />
                 </div>
-                <div class="tooltip" data-tip="Pin Post">
+                <div class="tooltip hidden lg:block" data-tip="Pin Post">
                   <img src="/images/Frame 5.png" alt="" />
                 </div>
               </div>
@@ -49,11 +49,11 @@
       <!-- bg-[#12132D] -->
       <!-- banner starts -->
       <section
-        class="bg-[linear-gradient(50deg,rgba(18,19,45,1),rgba(18,19,45,.1)),url(images/bgbanner.png)] rounded-3xl h-[500px] bg-bottom bg-no-repeat flex justify-center items-center mt-14"
+        class="bg-[linear-gradient(50deg,rgba(18,19,45,1),rgba(18,19,45,.1)),url(images/bgbanner.png)] rounded-3xl h-[900px] lg:h-[500px] bg-bottom bg-no-repeat flex justify-center items-center mt-14"
       >
-        <div class="flex gap-20">
+        <div class="flex lg:flex-row flex-col gap-20">
           <div class="space-y-10">
-            <h1 class="text-6xl font-bold text-white">
+            <h1 class="text-6xl font-bold text-white text-center lg:text-start">
               Welcome to the <br />
               <span
                 class="text-transparent bg-clip-text bg-gradient-to-r from-[#797DFC] to-[#797DFC]"
@@ -61,15 +61,23 @@
               >
               Forum
             </h1>
-            <p class="text-xl font-medium text-[#FFFFFFCC]">
+            <p
+              class="text-xl font-medium text-center lg:text-start text-[#FFFFFFCC]"
+            >
               Share your favorite opinion and win and wp <br />forum coffee mug!
             </p>
             <input
+              id="searchInput"
               type="text"
               placeholder="Type here"
-              class="input input-bordered w-full max-w-xs"
+              class="input input-bordered w-full max-w-xs ml-5 lg:ml-0"
             />
-            <button class="btn bg-[#797DFC] border-none">Search</button>
+            <button
+              id="searchBtn"
+              class="btn bg-[#797DFC] border-none ml-32 lg:ml-0"
+            >
+              Search
+            </button>
           </div>
           <div class="bg-white space-y-4 font-medium p-6 m-auto rounded-xl">
             <div class="flex justify-between w-48">
@@ -107,7 +115,7 @@
         </div>
 
         <!-- card section start -->
-        <div class="flex justify-around mt-12">
+        <div class="flex justify-around lg:flex-row flex-col mt-12">
           <div id="allPost-container" class="space-y-5">
             <!-- <div class="bg-[#F3F3F5] p-10 flex rounded-3xl gap-6">
               <div style="position: relative">
@@ -161,19 +169,21 @@
                       <p>5 min</p>
                     </div>
                   </div>
-                  <div>
+                  <div id="markAs-read">
                     <img src="images/email 1.png" alt="" />
                   </div>
                 </div>
               </div>
             </div> -->
           </div>
-          <div class="bg-[#F3F3F5] w-[25%] p-8 rounded-2xl">
+          <div class="bg-[#F3F3F5] lg:w-[25%] mt-6 lg:mt-0 p-8 rounded-2xl">
             <div class="flex justify-between">
               <h3 class="font-bold text-xl">Title</h3>
               <div class="flex gap-2 text-center">
                 <img src="images/tik.png" alt="tik" />
-                <p class="m-1 text-[#12132D99]">Mark as read (4)</p>
+                <p id="view-count" class="m-1 text-[#12132D99]">
+                  Mark as read (0)
+                </p>
               </div>
             </div>
             <div class="flex gap-1 bg-white p-4 rounded-2xl mt-4">
@@ -193,7 +203,7 @@
       <!-- callout section starts -->
       <section>
         <div
-          class="flex justify-center items-center gap-40 bg-[#12132D] rounded-3xl mt-28 p-8"
+          class="flex lg:flex-row flex-col justify-center items-center gap-40 bg-[#12132D] rounded-3xl mt-28 p-8"
         >
           <div>
             <h2 class="font-black text-6xl text-white mb-4">Join Our Forum</h2>
@@ -226,7 +236,10 @@
           </p>
         </div>
         <!-- post card starts -->
-        <div id="latest-post" class="mt-12 flex gap-4 justify-center">
+        <div
+          id="latest-post"
+          class="mt-12 flex lg:flex-row flex-col gap-4 justify-center"
+        >
           <!-- <div class="border w-96 flex flex-col p-6 space-y-3 rounded-3xl">
             <img src="images/profile-4.png" alt="" />
             <div class="flex gap-4">
@@ -279,7 +292,7 @@
       <!-- letest post section ends -->
     </main>
     <footer>
-      <section class="bg-[#12132D0D] h-[350px] mt-28">
+      <section class="bg-[#12132D0D] lg:h-[350px] h-[450px] mt-28">
         <div
           class="flex flex-col text-center justify-center items-center space-y-5 border-b-2 m-4 p-10"
         >
