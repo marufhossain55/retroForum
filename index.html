@@ -67,13 +67,14 @@
               Share your favorite opinion and win and wp <br />forum coffee mug!
             </p>
             <input
-              id="searchInput"
+              id="input-value"
               type="text"
               placeholder="Type here"
               class="input input-bordered w-full max-w-xs ml-5 lg:ml-0"
             />
             <button
               id="searchBtn"
+              onclick="inputField()"
               class="btn bg-[#797DFC] border-none ml-32 lg:ml-0"
             >
               Search
@@ -117,6 +118,12 @@
         <!-- card section start -->
         <div class="flex justify-around lg:flex-row flex-col mt-12">
           <div id="allPost-container" class="space-y-5">
+            <div id="loadingMessage" class="flex justify-center hidden">
+              <span class="loading loading-bars loading-xs"></span>
+              <span class="loading loading-bars loading-sm"></span>
+              <span class="loading loading-bars loading-md"></span>
+              <span class="loading loading-bars loading-lg"></span>
+            </div>
             <!-- <div class="bg-[#F3F3F5] p-10 flex rounded-3xl gap-6">
               <div style="position: relative">
                 <img
@@ -182,18 +189,20 @@
               <div class="flex gap-2 text-center">
                 <img src="images/tik.png" alt="tik" />
                 <p id="view-count" class="m-1 text-[#12132D99]">
-                  Mark as read (0)
+                  Mark as read (<span id="counts">0</span>)
                 </p>
               </div>
             </div>
-            <div class="flex gap-1 bg-white p-4 rounded-2xl mt-4">
-              <p class="m-1 font-semibold">
-                10 Kids Unaware of Their Halloween Costume
-              </p>
-              <div class="flex gap-2 justify-center m-4">
-                <img src="images/seen.png" alt="watched" />
-                <p>1,568</p>
-              </div>
+            <div id="book-mark">
+              <!-- <div class="flex gap-1 bg-white p-4 rounded-2xl mt-4">
+                <p class="m-1 font-semibold">
+                  10 Kids Unaware of Their Halloween Costume
+                </p>
+                <div class="flex gap-2 justify-center m-4">
+                  <img src="images/seen.png" alt="watched" />
+                  <p>1,568</p>
+                </div>
+              </div> -->
             </div>
           </div>
         </div>
@@ -308,6 +317,7 @@
         <p class="text-center mt-12">2017, All Rights Reserved.</p>
       </section>
     </footer>
+
     <script src="script.js"></script>
   </body>
 </html>

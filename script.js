@@ -1,4 +1,8 @@
-const fatchAllPost = async () => {
+const spinnerDiv = document.getElementById('spinner');
+const mainDiv = document.getElementById('div-main');
+let count = 1;
+
+const fatchAllPost = async (all, val) => {
   const res = await fetch(
     'https://openapi.programming-hero.com/api/retro-forum/posts'
   );
@@ -13,7 +17,7 @@ const fatchAllPost = async () => {
     const allPostCard = document.createElement('div');
     // allPostCard.classList = `bg-[#F3F3F5] p-10 flex rounded-3xl gap-6`;
     allPostCard.innerHTML = `
-      <div class="bg-[#F3F3F5] p-10 flex rounded-3xl gap-6">
+      <div id="mainDiv" class="bg-[#F3F3F5] p-10 flex rounded-3xl gap-6">
                 <div style="position: relative">
                   <img
                   class="rounded-2xl"
@@ -64,7 +68,7 @@ const fatchAllPost = async () => {
                       </div>
                     </div>
                     <div >
-                    <img src="images/email 1.png" alt="" /></div>
+                    <img onclick="bookMark('${post.title}','${post.view_count}')" src="images/email 1.png" alt="" /></div>
                   </div>
                 </div>
               </div>
@@ -120,91 +124,21 @@ const fatchLatestPost = async () => {
 fatchLatestPost();
 fatchAllPost();
 
-const fetchPostsByCategory = async (category) => {
-  const res = await fetch(
-    `https://openapi.programming-hero.com/api/retro-forum/posts?category=${category}`
-  );
-  const data = await res.json();
-  return data.posts;
+const bookMark = (title, view) => {
+  const bookMark = document.getElementById('book-mark');
+  const fevdiv = document.createElement('div');
+  fevdiv.innerHTML = `<div class="flex gap-1 bg-white p-4 rounded-2xl mt-4">
+  <p class="m-1 font-semibold">
+    ${title}
+  </p>
+  <div class="flex gap-2 justify-center m-4">
+    <img src="images/seen.png" alt="watched" />
+    <p>${view}</p>
+  </div>
+</div>`;
+  bookMark.appendChild(fevdiv);
+  const counts = document.getElementById('counts');
+  counts.innerText = count;
+  count++;
 };
-
-const renderPosts = (posts) => {
-  const allPostContainer = document.getElementById('allPost-container');
-  allPostContainer.innerHTML = ''; // Clear previous posts
-  posts.forEach((post) => {
-    const statusImage = post.isActive
-      ? 'images/Status_green.png'
-      : 'images/Status_red.png';
-    const allPostCard = document.createElement('div');
-    allPostCard.innerHTML = `
-      <div class="bg-[#F3F3F5] p-10 flex rounded-3xl gap-6">
-        <div style="position: relative">
-          <img
-            class="rounded-2xl"
-            height="90px"
-            width="90px"
-            src="${post.image}"
-            alt="images"
-            style="display: block"
-          />
-          <img
-            src="${statusImage}"
-            alt="Status_green"
-            style="position: absolute; top: -5px; right: -5px"
-          />
-        </div>
-        <div>
-          <div class="inline-flex gap-4 font-medium text-sm mb-3 w-[550px]">
-            <p># ${post.category}</p>
-            <p>Author : ${post.author.name}</p>
-          </div>
-          <div class="border-b-4 border-dashed">
-            <h3 class="font-bold text-xl mb-4">
-              ${post.title}
-            </h3>
-            <p class="text-[#12132D99] mb-5">
-             ${post.description}
-            </p>
-          </div>
-          <div class="flex justify-between mt-6 ">
-            <div class="flex space-x-6">
-              <div class="flex gap-2">
-                <img
-                  src="images/tabler-icon-message-2.png"
-                  alt="message"
-                />
-                <p>${post.comment_count}</p>
-              </div>
-              <div class="flex gap-2">
-                <img src="images/seen.png" alt="total watch" />
-                <p>${post.view_count}</p>
-              </div>
-              <div class="flex gap-2">
-                <img
-                  src="images/tabler-icon-clock-hour-9.png"
-                  alt="posted time"
-                />
-                <p>${post.posted_time} min</p>
-              </div>
-            </div>
-            <div>
-              <img src="images/email 1.png" alt="" />
-            </div>
-          </div>
-        </div>
-      </div>
-    `;
-    allPostContainer.appendChild(allPostCard);
-  });
-};
-
-const searchPosts = async () => {
-  const input = document.getElementById('searchInput').value;
-  const posts = await fetchPostsByCategory(input);
-  renderPosts(posts);
-};
-
-// Adding event listener to search button
-document.getElementById('searchBtn').addEventListener('click', searchPosts);
-
 /////////////////////////////
