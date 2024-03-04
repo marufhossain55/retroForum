@@ -74,7 +74,7 @@
             />
             <button
               id="searchBtn"
-              onclick="inputField()"
+              onclick="inputFields()"
               class="btn bg-[#797DFC] border-none ml-32 lg:ml-0"
             >
               Search
@@ -116,14 +116,14 @@
         </div>
 
         <!-- card section start -->
+        <div id="spinner" class="flex justify-center hidden">
+          <span class="loading loading-bars loading-xs"></span>
+          <span class="loading loading-bars loading-sm"></span>
+          <span class="loading loading-bars loading-md"></span>
+          <span class="loading loading-bars loading-lg"></span>
+        </div>
         <div class="flex justify-around lg:flex-row flex-col mt-12">
           <div id="allPost-container" class="space-y-5">
-            <div id="loadingMessage" class="flex justify-center hidden">
-              <span class="loading loading-bars loading-xs"></span>
-              <span class="loading loading-bars loading-sm"></span>
-              <span class="loading loading-bars loading-md"></span>
-              <span class="loading loading-bars loading-lg"></span>
-            </div>
             <!-- <div class="bg-[#F3F3F5] p-10 flex rounded-3xl gap-6">
               <div style="position: relative">
                 <img

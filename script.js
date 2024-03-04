@@ -1,12 +1,15 @@
 const spinnerDiv = document.getElementById('spinner');
 const mainDiv = document.getElementById('div-main');
+const allPostDiv = document.getElementById('allPost-container');
+
 let count = 1;
 
-const fatchAllPost = async (all, val) => {
+const fatchAllPost = async (type, value) => {
   const res = await fetch(
-    'https://openapi.programming-hero.com/api/retro-forum/posts'
+    `https://openapi.programming-hero.com/api/retro-forum/posts?${type + value}`
   );
   const data = await res.json();
+  allPostDiv.textContent = '';
   posts = data.posts;
   const allPostContainer = document.getElementById('allPost-container');
   posts.forEach((post) => {
@@ -17,7 +20,7 @@ const fatchAllPost = async (all, val) => {
     const allPostCard = document.createElement('div');
     // allPostCard.classList = `bg-[#F3F3F5] p-10 flex rounded-3xl gap-6`;
     allPostCard.innerHTML = `
-      <div id="mainDiv" class="bg-[#F3F3F5] p-10 flex rounded-3xl gap-6">
+      <div id="mainDiv" class="bg-[#F3F3F5] p-10 flex lg:flex-row flex-col rounded-3xl gap-6">
                 <div style="position: relative">
                   <img
                   class="rounded-2xl"
@@ -141,4 +144,18 @@ const bookMark = (title, view) => {
   counts.innerText = count;
   count++;
 };
+
+const inputFields = () => {
+  const inputField = document.getElementById('input-value');
+  const inputValue = inputField.value;
+  const type = 'category=';
+  fatchAllPost(type, inputValue);
+  spinnerDiv.classList.remove('hidden');
+  allPostDiv.classList.add('hidden');
+  setTimeout(() => {
+    spinnerDiv.classList.add('hidden');
+    allPostDiv.classList.remove('hidden');
+  }, 2000);
+};
+setTimeout;
 /////////////////////////////
